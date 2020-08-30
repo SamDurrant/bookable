@@ -16,6 +16,10 @@ app.use(express.json())
 app.use(helmet())
 app.use(cors())
 app.use(validateBearerToken)
+
+app.get('/', (req, res, next) => {
+  res.send('Hello, world!')
+})
 app.use('/api/bookmarks', bookmarksRouter)
 app.use(errorHandler)
 
